@@ -29,7 +29,7 @@ interface Domain {
 
 
 
-const ManageDomainPage = ({ domain = {
+export default function ManageDomainPage({ domain = {
     id: '1',
     name: `example${1}.com`,
     status: "active",
@@ -39,7 +39,7 @@ const ManageDomainPage = ({ domain = {
     locked: false,
     whoisPrivacy: false,
     autoRenew: true,
-} }: { domain: Domain }) => {
+} }: { domain: Domain }) {
     const [managementDialog, setManagementDialog] = useState(true);
 
     const getStatusBadge = (status: string) => {
@@ -189,5 +189,3 @@ const ManageDomainPage = ({ domain = {
         </Dialog>
     );
 };
-
-export default ManageDomainPage;
